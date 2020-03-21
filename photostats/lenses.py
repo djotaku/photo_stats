@@ -1,12 +1,13 @@
 """Create a graphs relating to lens usage on a directory of photos."""
 
-from exif import Image
+from collections import Counter
+from pyexiv2 import Image
 import os
 import re
 
 
-#directory = "/media/Photos/My Photos 2005 and on/2020/03-Mar-2020/Rebel T6s/Scarlett 8 year old birthday portraits"
-directory = "/media/Photos/My Photos 2005 and on/2020/03-Mar-2020/Pixel"
+directory = "/media/Photos/My Photos 2005 and on/2020/03-Mar-2020/Rebel T6s/Scarlett 8 year old birthday portraits"
+
 
 def get_photos(directory: str) -> list:
     """Get photos from a directory.
@@ -15,7 +16,7 @@ def get_photos(directory: str) -> list:
     :returns: A list containing photo files with complete path
     """
     directory_files: list = os.scandir(path=directory)
-    regex = re.compile('jpg$')  # needs to be generalized for all possible photo extensions
+    regex = re.compile('CR2$')  # needs to be generalized for all possible photo extensions
     photos: list = []
     for file in directory_files:
         if regex.search(file.name) and file.is_file():
@@ -29,17 +30,20 @@ def get_lens_make_model(photo_list: list) -> dict:
     :param photo_list: A list of photo files.
     :returns: A Counter dictionary, counting the makes/models of lenses.
     """
+    lens_list = []
     for image in photo_list:
-        print(image)
-        with open(image, 'rb') as image_file:
-            this_image = Image(image_file)
-            print(dir(this_image))
+        this_image = Image(image)
+        this_image_exif = this_image.read_exif()
+        lens_list.append((this_image_exif["Exif.Photo.LensModel"]))
+    return Counter(lens_list)
 
 
 
 def main():
     photos = get_photos(directory)
-    get_lens_make_model(photos)
+    lens_count = get_lens_make_model(photos)
+    for lens, count in lens_count.items():
+        print(f'{lens} : {count}')
 
 
 if __name__ == '__main__':
