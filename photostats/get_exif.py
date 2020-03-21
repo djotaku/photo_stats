@@ -8,9 +8,9 @@ import re
 
 def scan_tree(directory: str):
     """Recursively yield DirEntry objects for given directory."""
-    for entry in scandir(path):
+    for entry in os.scandir(directory):
         if entry.is_dir(follow_symlinks=False):
-            yield from scantree(entry.path)  # see below for Python 2.x
+            yield from scan_tree(entry.path)  # see below for Python 2.x
         else:
             yield entry
 
@@ -21,12 +21,8 @@ def get_photos(this_directory: str) -> list:
     :param this_directory: a directory containing photos
     :returns: A list containing photo files with complete path
     """
-    directory_files: list = os.scandir(path=this_directory)
-    #directories_list = []
-    #for root, directories, files in os.walk('/media/Photos/My Photos 2005 and on/2020/03-Mar-2020/'):
-    #    directories_list.append(directories)
-    #directory_files = list(itertools.chain.from_iterable(directories_list))
-    regex = re.compile('CR2$')  # needs to be generalized for all possible photo extensions
+    directory_files: list = scan_tree(this_directory)
+    regex = re.compile('CR2$|jpg$')  # needs to be generalized for all possible photo extensions
     photos: list = []
     for file in directory_files:
         if regex.search(file.name) and file.is_file():
@@ -43,6 +39,9 @@ def get_exif(photo_list: list) -> list:
     exif_list = []
     for image in photo_list:
         this_image = Image(image)
-        this_image_exif = this_image.read_exif()
+        try:
+            this_image_exif = this_image.read_exif()
+        except UnicodeDecodeError:
+            print(f"Could not get exif data for {image}")
         exif_list.append(this_image_exif)
     return exif_list

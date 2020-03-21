@@ -13,12 +13,12 @@ def get_lens_make_model(exif_list: list) -> dict:
     """
     lens_list = []
     for data in exif_list:
-        lens_list.append((data["Exif.Photo.LensModel"]))
+        lens_list.append((data.get("Exif.Photo.LensModel")))
     return Counter(lens_list)
 
 
 def main():
-    directory = "/media/Photos/My Photos 2005 and on/2020/03-Mar-2020/Rebel T6s/Scarlett 8 year old birthday portraits"
+    directory = "/media/Photos/My Photos 2005 and on/2020/"
     photos = get_exif.get_photos(directory)
     exif = get_exif.get_exif(photos)
     lens_count = get_lens_make_model(exif)
