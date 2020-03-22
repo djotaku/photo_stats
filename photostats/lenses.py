@@ -50,7 +50,7 @@ def main(exif):
     print("\nFocal Length Count:")
     focal_length_count = get_focal_length(exif)
     for focal_length, count in focal_length_count.items():
-        print(f'{focal_length} : {count}')
+        print(f'{focal_length} mm : {count}')
     plt.bar(focal_length_count.keys(), focal_length_count.values())
     plt.show()
 
