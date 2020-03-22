@@ -35,11 +35,10 @@ def get_focal_length(exif_list: list) -> dict:
             if int(fixed_string) > 1000:
                 pass
             else:
-                fixed_string = fixed_string + " mm"
                 focal_length_list.append(fixed_string)
         except ValueError:
             pass
-    return Counter(focal_length_list)
+    return Counter(sorted(focal_length_list, key=int))
 
 
 def main(exif):
