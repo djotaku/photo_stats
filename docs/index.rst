@@ -19,7 +19,8 @@ by typing python -m photostats -h. Or read further in this documentation.
    :maxdepth: 2
    :caption: Contents:
 
-
+   usage
+   modules/get_exif
 
 Indices and tables
 ==================
