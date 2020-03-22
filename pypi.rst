@@ -2,6 +2,11 @@
 PhotoStats
 ==========
 
+
+
+.. image:: https://codecov.io/gh/djotaku/photo_stats/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/djotaku/photo_stats
+
 This is a Python package that will eventually have a bunch of utilities for running a variety of stats on
 your photos based on EXIF data. By using exiv-based library, it can also read data
 from RAW files.
