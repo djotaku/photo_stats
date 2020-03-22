@@ -4,7 +4,7 @@ from collections import Counter
 import matplotlib.pyplot as plt  # type: ignore
 
 from photostats import get_exif
-
+from photostats.utils import create_plot
 
 def get_lens_make_model(exif_list: list) -> dict:
     """Obtain lens make and model for each photo passed in.
@@ -47,8 +47,7 @@ def main(exif):
     print("Lens Model Count:")
     for lens, count in lens_count.items():
         print(f'{lens} : {count}')
-    plt.bar(lens_count.keys(), lens_count.values())
-    plt.show()
+    create_plot.create_plot(lens_count.keys(), lens_count.values())
     print("\nFocal Length Count:")
     focal_length_count = get_focal_length(exif)
     for focal_length, count in focal_length_count.items():
