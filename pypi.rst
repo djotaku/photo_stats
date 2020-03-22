@@ -2,7 +2,7 @@
 PhotoStats
 ==========
 
-This is a Python package with a bunch of utilities for running a variety of stats on
+This is a Python package that will eventually have a bunch of utilities for running a variety of stats on
 your photos based on EXIF data. By using exiv-based library, it can also read data
 from RAW files.
 
