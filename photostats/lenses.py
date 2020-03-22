@@ -31,11 +31,14 @@ def get_focal_length(exif_list: list) -> dict:
     for data in exif_list:
         pre_fixed_string = f"{data.get('Exif.Photo.FocalLength')}"
         fixed_string = f"{pre_fixed_string[:pre_fixed_string.find('/')]}"
-        if int(fixed_string) > 1000:
+        try:
+            if int(fixed_string) > 1000:
+                pass
+            else:
+                fixed_string = fixed_string + " mm"
+                focal_length_list.append(fixed_string)
+        except ValueError:
             pass
-        else:
-            fixed_string = fixed_string + " mm"
-            focal_length_list.append(fixed_string)
     return Counter(focal_length_list)
 
 
@@ -57,5 +60,5 @@ def main(directory):
 
 
 if __name__ == '__main__':
-    test_directory = "/media/Photos/My Photos 2005 and on/2020/"
+    test_directory = "/media/Photos/My Photos 2005 and on/2019/"
     main(test_directory)
