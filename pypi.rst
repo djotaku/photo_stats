@@ -6,9 +6,10 @@ PhotoStats
 
 .. image:: https://codecov.io/gh/djotaku/photo_stats/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/djotaku/photo_stats
+
 .. image:: https://readthedocs.org/projects/photo-stats/badge/?version=latest
-:target: https://photo-stats.readthedocs.io/en/latest/?badge=latest
-:alt: Documentation Status
+   :target: https://photo-stats.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
 
 This is a Python package that will eventually have a bunch of utilities for running a variety of stats on
 your photos based on EXIF data. By using exiv-based library, it can also read data
