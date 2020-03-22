@@ -1,6 +1,7 @@
 """Create a graphs relating to lens usage on a directory of photos."""
 
 from collections import Counter
+import matplotlib.pyplot as plt
 
 from photostats import get_exif
 
@@ -13,7 +14,10 @@ def get_lens_make_model(exif_list: list) -> dict:
     """
     lens_list = []
     for data in exif_list:
-        lens_list.append((data.get("Exif.Photo.LensModel")))
+        if data.get("Exif.Photo.LensModel") is None:
+            pass
+        else:
+            lens_list.append((data.get("Exif.Photo.LensModel")))
     return Counter(lens_list)
 
 
@@ -43,10 +47,14 @@ def main():
     print("Lens Model Count:")
     for lens, count in lens_count.items():
         print(f'{lens} : {count}')
+    plt.bar(lens_count.keys(), lens_count.values())
+    plt.show()
     print("\nFocal Length Count:")
     focal_length_count = get_focal_length(exif)
     for focal_length, count in focal_length_count.items():
         print(f'{focal_length} : {count}')
+    plt.bar(focal_length_count.keys(), focal_length_count.values())
+    plt.show()
 
 
 if __name__ == '__main__':
