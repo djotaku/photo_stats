@@ -1,5 +1,6 @@
 import argparse
 
+import get_exif  # type: ignore
 import lenses  # type: ignore
 
 
@@ -11,7 +12,9 @@ def parse_args():
 
 def main():
     args = parse_args()
-    lenses.main(args.path)
+    photos = get_exif.get_photos(args.path)
+    exif = get_exif.get_exif(photos)
+    lenses.main(exif)
 
 
 if __name__ == '__main__':

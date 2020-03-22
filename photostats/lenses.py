@@ -42,9 +42,7 @@ def get_focal_length(exif_list: list) -> dict:
     return Counter(focal_length_list)
 
 
-def main(directory):
-    photos = get_exif.get_photos(directory)
-    exif = get_exif.get_exif(photos)
+def main(exif):
     lens_count = get_lens_make_model(exif)
     print("Lens Model Count:")
     for lens, count in lens_count.items():
@@ -60,5 +58,7 @@ def main(directory):
 
 
 if __name__ == '__main__':
-    test_directory = "/media/Photos/My Photos 2005 and on/2019/"
-    main(test_directory)
+    test_directory = "/media/Photos/My Photos 2005 and on/2020/"
+    test_photos = get_exif.get_photos(test_directory)
+    test_exif = get_exif.get_exif(test_photos)
+    main(test_exif)
