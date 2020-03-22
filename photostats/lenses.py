@@ -46,7 +46,8 @@ def main(exif):
     print("Lens Model Count:")
     for lens, count in lens_count.items():
         print(f'{lens} : {count}')
-    create_plot.create_plot(lens_count.keys(), lens_count.values())
+    create_plot.create_plot(lens_count.keys(), lens_count.values(), x_label="Lens Model", y_label="Number of Photos",
+                            title="Number of Photos Taken by Each Lens")
     print("\nFocal Length Count:")
     focal_length_count = get_focal_length(exif)
     for focal_length, count in focal_length_count.items():
