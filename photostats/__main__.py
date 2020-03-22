@@ -15,7 +15,7 @@ def main():
     args = parse_args()
     photos = get_exif.get_photos(args.path)
     exif = get_exif.get_exif(photos)
-    lenses.main(exif)
+    lenses.main(exif, args.graphpath)
 
 
 if __name__ == '__main__':
