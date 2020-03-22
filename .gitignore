@@ -141,3 +141,13 @@ dmypy.json
 [Ss]cripts
 pyvenv.cfg
 pip-selfcheck.json
+
+### PyCharm
+.idea/
+
+### Vi
+*.swp
+
+### eviv
+exif_fields
+for_checking_exif_fields
