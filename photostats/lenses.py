@@ -1,7 +1,7 @@
 """Create a graphs relating to lens usage on a directory of photos."""
 
 from collections import Counter
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt  # type: ignore
 
 from photostats import get_exif
 

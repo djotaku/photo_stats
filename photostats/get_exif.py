@@ -1,6 +1,6 @@
 """Get EXIF data from a directory of photos"""
 
-from pyexiv2 import Image
+from pyexiv2 import Image  # type: ignore
 import os
 import re
 
