@@ -8,7 +8,7 @@ from RAW files.
 
 Currently you can get lens stats by running:
 
-python -m photostats.lenses
+python -m photostats
 
 It will produce output like:
 
