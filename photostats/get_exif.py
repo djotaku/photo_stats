@@ -1,6 +1,5 @@
 """Get EXIF data from a directory of photos"""
 
-import itertools
 from pyexiv2 import Image
 import os
 import re
