@@ -41,24 +41,26 @@ def get_focal_length(exif_list: list) -> dict:
     return Counter(sorted(focal_length_list, key=int))
 
 
-def main(exif):
+def main(exif, graph_path):
     lens_count = get_lens_make_model(exif)
     print("Lens Model Count:")
     for lens, count in lens_count.items():
         print(f'{lens} : {count}')
     create_plot.create_plot(lens_count.keys(), lens_count.values(), x_label="Lens Model", y_label="Number of Photos",
-                            title="Number of Photos Taken by Each Lens")
+                            title="Number of Photos Taken by Each Lens", graph_path=graph_path,
+                            graph_filename="lens_models")
     print("\nFocal Length Count:")
     focal_length_count = get_focal_length(exif)
     for focal_length, count in focal_length_count.items():
         print(f'{focal_length} mm : {count}')
     create_plot.create_plot(focal_length_count.keys(), focal_length_count.values(), x_label="Focal Length (mm)",
-                            y_label="Number of Photos", title="Number of Photos Taken at Each Focal Length")
-    plt.show()
+                            y_label="Number of Photos", title="Number of Photos Taken at Each Focal Length",
+                            graph_path=graph_path, graph_filename="lens_focal_length")
 
 
 if __name__ == '__main__':
     test_directory = "/media/Photos/My Photos 2005 and on/2020/"
+    test_graph_path = "/home/ermesa/tmp/photostats"
     test_photos = get_exif.get_photos(test_directory)
     test_exif = get_exif.get_exif(test_photos)
-    main(test_exif)
+    main(test_exif, test_graph_path)
