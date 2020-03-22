@@ -1,6 +1,6 @@
 import argparse
 
-import lenses  # type: none
+import lenses  # type: ignore
 
 
 def parse_args():
