@@ -5,7 +5,7 @@
 photostats is a program to generate statistics from a directory of photos. It will
 recursively search lower directories. It will generate graphs of the data. For example:
 
-![Graph Example]()
+![Graph Example](https://raw.githubusercontent.com/djotaku/photo_stats/master/graph_examples/lens_models.png)
 
 After installing with pip install photostats, you can get a feel for all the commands
 by typing python -m photostats -h. Or read further in this documentation. 
