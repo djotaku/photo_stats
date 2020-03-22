@@ -1,7 +1,7 @@
 import argparse
 
-import get_exif  # type: ignore
-import lenses  # type: ignore
+from photostats import get_exif  # type: ignore
+from photostats import lenses  # type: ignore
 
 
 def parse_args():
