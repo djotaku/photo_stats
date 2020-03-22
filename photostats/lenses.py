@@ -52,7 +52,8 @@ def main(exif):
     focal_length_count = get_focal_length(exif)
     for focal_length, count in focal_length_count.items():
         print(f'{focal_length} mm : {count}')
-    plt.bar(focal_length_count.keys(), focal_length_count.values())
+    create_plot.create_plot(focal_length_count.keys(), focal_length_count.values(), x_label="Focal Length (mm)",
+                            y_label="Number of Photos", title="Number of Photos Taken at Each Focal Length")
     plt.show()
 
 
