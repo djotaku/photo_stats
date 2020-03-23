@@ -24,7 +24,7 @@ def get_lens_make_model(exif_list: list) -> dict:
 def get_focal_length(exif_list: list) -> dict:
     """Obtain focal length for each photo passed in.
 
-        :param exif_list: A list of photo files.
+        :param exif_list: A list of photo exif metadata.
         :returns: A Counter dictionary, counting the focal length of lenses.
         """
     focal_length_list = []

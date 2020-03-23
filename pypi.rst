@@ -15,6 +15,9 @@ This is a Python package that will eventually have a bunch of utilities for runn
 your photos based on EXIF data. By using exiv-based library, it can also read data
 from RAW files.
 
+Currently will print output to the commandline and produce a bar graph for each
+ category.
+
 usage: __main__.py [-h] [-p PATH] [-g GRAPHPATH]
 
 optional arguments:
@@ -31,7 +34,9 @@ EF17-40mm f/4L USM : 18
 
 EF28-105mm f/3.5-4.5 USM : 80
 
-Followed by a graph of the above data. Once you exit the graph window, you will get.
+55-200mm : 60
+
+35mm : 23
 
 Focal Length Count:
 
@@ -39,20 +44,38 @@ Focal Length Count:
 
 20 mm : 4
 
-63 mm : 5
-
-98 mm : 7
-
-70 mm : 41
-
-105 mm : 17
-
 28 mm : 3
 
-82 mm : 1
+35 mm : 23
+
+55 mm : 12
+
+60 mm : 10
+
+63 mm : 5
+
+64 mm : 3
 
 65 mm : 4
 
+70 mm : 41
+
 75 mm : 2
 
-Followed by another graph.
+82 mm : 1
+
+90 mm : 1
+
+98 mm : 7
+
+105 mm : 17
+
+200 mm : 34
+
+Make-Model Count:
+
+Canon Canon EOS Rebel T6s : 181
+
+Google Pixel : 143
+
+Motorola XT1096 : 96

@@ -2,6 +2,7 @@ import argparse
 
 from photostats import get_exif  # type: ignore
 from photostats import lenses  # type: ignore
+from photostats import camera  # type: ignore
 
 
 def parse_args():
@@ -16,6 +17,7 @@ def main():
     photos = get_exif.get_photos(args.path)
     exif = get_exif.get_exif(photos)
     lenses.main(exif, args.graphpath)
+    camera.main(exif, args.graphpath)
 
 
 if __name__ == '__main__':
