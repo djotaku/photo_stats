@@ -6,7 +6,10 @@ import re
 
 
 def scan_tree(directory: str):
-    """Recursively yield DirEntry objects for given directory."""
+    """Recursively yield DirEntry objects for given directory.
+
+    :param directory: A string with the directory to scan for photos.
+    :returns: A list of files in the directory."""
     for entry in os.scandir(directory):
         if entry.is_dir(follow_symlinks=False):
             yield from scan_tree(entry.path)  # see below for Python 2.x

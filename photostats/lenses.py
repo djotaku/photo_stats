@@ -1,10 +1,10 @@
 """Create a graphs relating to lens usage on a directory of photos."""
 
 from collections import Counter
-import matplotlib.pyplot as plt  # type: ignore
 
 from photostats import get_exif
 from photostats.utils import create_plot
+
 
 def get_lens_make_model(exif_list: list) -> dict:
     """Obtain lens make and model for each photo passed in.
@@ -58,7 +58,7 @@ def main(exif, graph_path):
                             graph_path=graph_path, graph_filename="lens_focal_length")
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     test_directory = "/media/Photos/My Photos 2005 and on/2020/"
     test_graph_path = "/home/ermesa/tmp/photostats"
     test_photos = get_exif.get_photos(test_directory)
