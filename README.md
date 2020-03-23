@@ -1,6 +1,6 @@
 # Photo Stats
 
-![Lint,PyTest, MyPy, and Coverage](https://github.com/djotaku/photo_stats/workflows/Lint,PyTest,%20MyPy,%20and%20Coverage/badge.svg) [![codecov](https://codecov.io/gh/djotaku/photo_stats/branch/master/graph/badge.svg)](https://codecov.io/gh/djotaku/photo_stats)[![Documentation Status](https://readthedocs.org/projects/photo-stats/badge/?version=latest)](https://photo-stats.readthedocs.io/en/latest/?badge=latest)
+![Lint,PyTest, MyPy, and Coverage](https://github.com/djotaku/photo_stats/workflows/Lint,PyTest,%20MyPy,%20and%20Coverage/badge.svg) [![codecov](https://codecov.io/gh/djotaku/photo_stats/branch/master/graph/badge.svg)](https://codecov.io/gh/djotaku/photo_stats)[![Documentation Status](https://readthedocs.org/projects/photo-stats/badge/?version=latest)](https://photo-stats.readthedocs.io/en/latest/?badge=latest)![Upload Python Package](https://github.com/djotaku/photo_stats/workflows/Upload%20Python%20Package/badge.svg)
 
 photostats is a program to generate statistics from a directory of photos. It will
 recursively search lower directories. It will generate graphs of the data. For example:
