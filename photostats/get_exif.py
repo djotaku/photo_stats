@@ -24,10 +24,10 @@ def get_photos(this_directory: str) -> list:
     :returns: A list containing photo files with complete path
     """
     directory_files: list = scan_tree(this_directory)
-    regex = re.compile('CR2$|jpg$')  # needs to be generalized for all possible photo extensions
+    regex = re.compile('cr2$|jpg$|dng$')  # needs to be generalized for all possible photo extensions
     photos: list = []
     for file in directory_files:
-        if regex.search(file.name) and file.is_file():
+        if regex.search(file.name.lower()) and file.is_file():
             photos.append(file.path)
     return photos
 
@@ -40,7 +40,10 @@ def get_exif(photo_list: list) -> list:
     """
     exif_list = []
     for image in photo_list:
-        this_image = Image(image)
+        try:
+            this_image = Image(image)
+        except RuntimeError:   # cannot open dng
+            print(f"Could not get exif data for {image}")
         try:
             this_image_exif = this_image.read_exif()
         except UnicodeDecodeError:
