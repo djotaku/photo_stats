@@ -21,6 +21,8 @@ by typing python -m photostats -h. Or read further in this documentation.
 
    usage
    modules/get_exif
+   modules/lenses
+   modules/utils/create_plot
 
 Indices and tables
 ==================
