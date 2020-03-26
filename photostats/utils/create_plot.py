@@ -3,8 +3,8 @@
 import matplotlib.pyplot as plt  # type: ignore
 
 
-def create_plot(group_names: list, group_data: list, x_label: str = "", y_label: str = "", title: str = "",
-                graph_path: str = "", graph_filename: str = ""):
+def create_bar_chart(group_names: list, group_data: list, x_label: str = "", y_label: str = "", title: str = "",
+                     graph_path: str = "", graph_filename: str = ""):
     """Create matplotlib bar graph.
 
     :param group_names: A list with the names for bars
@@ -25,3 +25,7 @@ def create_plot(group_names: list, group_data: list, x_label: str = "", y_label:
     ax.title.set(y=1.05)
     fig.savefig(f"{graph_path}/{graph_filename}", transparent=False, dpi=80, bbox_inches="tight")
     # plt.show()
+
+
+def create_pie_chart():
+    pass

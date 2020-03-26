@@ -31,22 +31,22 @@ def main(exif, graph_path):
     print("\nMake count:")
     for make, count in make_count.items():
         print(f'{make} : {count}')
-    create_plot.create_plot(make_count.keys(), make_count.values(), x_label="Make/Company", y_label="Number of Photos",
-                            title="Number of Photos Taken with a camera per company", graph_path=graph_path,
-                            graph_filename="camera_make")
+    create_plot.create_bar_chart(make_count.keys(), make_count.values(), x_label="Make/Company", y_label="Number of Photos",
+                                 title="Number of Photos Taken with a camera per company", graph_path=graph_path,
+                                 graph_filename="camera_make")
     print("\nModel Count:")
     for model, count in model_count.items():
         print(f'{model} : {count}')
-    create_plot.create_plot(model_count.keys(), model_count.values(), x_label="Camera Model",
-                            y_label="Number of Photos", title="Number of Photos Taken with a camera model per company",
-                            graph_path=graph_path, graph_filename="camera_model")
+    create_plot.create_bar_chart(model_count.keys(), model_count.values(), x_label="Camera Model",
+                                 y_label="Number of Photos", title="Number of Photos Taken with a camera model per company",
+                                 graph_path=graph_path, graph_filename="camera_model")
     print("\nMake-Model Count:")
     for make_model, count in make_model_count.items():
         print(f'{make_model} : {count}')
-    create_plot.create_plot(make_model_count.keys(), make_model_count.values(), x_label="Camera Make/Model",
-                            y_label="Number of Photos",
-                            title="Number of Photos Taken with a camera Make/Model per company",
-                            graph_path=graph_path, graph_filename="camera_make_model")
+    create_plot.create_bar_chart(make_model_count.keys(), make_model_count.values(), x_label="Camera Make/Model",
+                                 y_label="Number of Photos",
+                                 title="Number of Photos Taken with a camera Make/Model per company",
+                                 graph_path=graph_path, graph_filename="camera_make_model")
 
 
 if __name__ == '__main__':  # pragma: no cover
