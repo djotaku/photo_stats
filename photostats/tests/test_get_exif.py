@@ -4,19 +4,32 @@ import pytest
 
 from photostats import get_exif
 
-file_paths = ['test_images/Canon/Canon EOS Rebel T1i.jpg', 'test_images/Canon/Canon EOS Rebel T6s.CR2',
-              'test_images/Canon/Canon EOS Rebel XT.dng', 'test_images/Canon/Canon EOS Rebel XTi.dng',
-              'test_images/Canon/Canon PowerShot A720 IS.jpg', 'test_images/Canon/Canon PowerShot S100.dng',
-              'test_images/Canon/Canon PowerShot SD980 IS.jpg', 'test_images/Fujifilm/Fujifilm FinePix2650.JPG',
-              'test_images/Fujifilm/Fujifilm FinePix A345.JPG', 'test_images/Fujifilm/Fujifilm Finepix S7000.JPG',
-              'test_images/Apple/Apple iPhone 4S.JPG', 'test_images/Motorola/Motorola Droid2.jpg',
-              'test_images/Motorola/Motorola XT1060.jpg', 'test_images/LG/LGE Nexus 5X.jpg',
-              'test_images/LG/LG LG-VN250.jpg', 'test_images/LG/LG LG-VN271.jpg', 'test_images/Google/Google Pixel.jpg',
-              'test_images/Kodak/Kodak DX3600.JPG', 'test_images/HTC/HTC ADR6350.jpg',
-              'test_images/Nikon/Nikon D7200.jpg', 'test_images/Olympus/Olympus C4100Z.jpg',
-              'test_images/Sony/Sony Cybershot.JPG', 'test_images/VTech/VTech Kidizoom camera.JPG']
+file_paths = ['photostats/tests/test_images/Canon/Canon EOS Rebel T1i.jpg',
+              'photostats/tests/test_images/Canon/Canon EOS Rebel T6s.CR2',
+              'photostats/tests/test_images/Canon/Canon EOS Rebel XT.dng',
+              'photostats/tests/test_images/Canon/Canon EOS Rebel XTi.dng',
+              'photostats/tests/test_images/Canon/Canon PowerShot A720 IS.jpg',
+              'photostats/tests/test_images/Canon/Canon PowerShot S100.dng',
+              'photostats/tests/test_images/Canon/Canon PowerShot SD980 IS.jpg',
+              'photostats/tests/test_images/Fujifilm/Fujifilm FinePix2650.JPG',
+              'photostats/tests/test_images/Fujifilm/Fujifilm FinePix A345.JPG',
+              'photostats/tests/test_images/Fujifilm/Fujifilm Finepix S7000.JPG',
+              'photostats/tests/test_images/Apple/Apple iPhone 4S.JPG',
+              'photostats/tests/test_images/Motorola/Motorola Droid2.jpg',
+              'photostats/tests/test_images/Motorola/Motorola XT1060.jpg',
+              'photostats/tests/test_images/LG/LGE Nexus 5X.jpg',
+              'photostats/tests/test_images/LG/LG LG-VN250.jpg',
+              'photostats/tests/test_images/LG/LG LG-VN271.jpg',
+              'photostats/tests/test_images/Google/Google Pixel.jpg',
+              'photostats/tests/test_images/Kodak/Kodak DX3600.JPG',
+              'photostats/tests/test_images/HTC/HTC ADR6350.jpg',
+              'photostats/tests/test_images/Nikon/Nikon D7200.jpg',
+              'photostats/tests/test_images/Olympus/Olympus C4100Z.jpg',
+              'photostats/tests/test_images/Sony/Sony Cybershot.JPG',
+              'photostats/tests/test_images/VTech/VTech Kidizoom camera.JPG']
 
 test_directory = "photostats/tests/test_images"
+
 
 def test_scan_test():
     scan_tree = get_exif.scan_tree(test_directory)
