@@ -1,5 +1,7 @@
 """Test get_exif.py"""
 
+import pytest
+
 from photostats import get_exif
 
 file_paths = ['test_images/Canon/Canon EOS Rebel T1i.jpg', 'test_images/Canon/Canon EOS Rebel T6s.CR2',
@@ -14,7 +16,7 @@ file_paths = ['test_images/Canon/Canon EOS Rebel T1i.jpg', 'test_images/Canon/Ca
               'test_images/Nikon/Nikon D7200.jpg', 'test_images/Olympus/Olympus C4100Z.jpg',
               'test_images/Sony/Sony Cybershot.JPG', 'test_images/VTech/VTech Kidizoom camera.JPG']
 
-test_directory = "test_images"
+test_directory = f"/photostats/tests/test_images"
 
 
 def test_scan_test():

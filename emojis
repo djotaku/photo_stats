@@ -7,3 +7,5 @@ graph: :chart_with_downwards_trend:
 documentation: :notebook:
 
 enhancement: :camera:
+
+test: :mag:

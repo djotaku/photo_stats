@@ -1,8 +1,11 @@
 """Get EXIF data from a directory of photos"""
 
 from pyexiv2 import Image  # type: ignore
+import pyexiv2
 import os
 import re
+
+pyexiv2.set_log_level(4)
 
 
 def scan_tree(directory: str):
@@ -44,9 +47,11 @@ def get_exif(photo_list: list) -> list:
             this_image = Image(image)
         except RuntimeError:   # cannot open dng
             print(f"Could not get exif data for {image}")
+            raise
         try:
             this_image_exif = this_image.read_exif()
         except UnicodeDecodeError:
-            print(f"Could not get exif data for {image}")
+            print(f"Unicode error with {image}. Trying a different encoding")
+            this_image_exif = this_image.read_exif(encoding='iso-8859-1')
         exif_list.append(this_image_exif)
     return exif_list

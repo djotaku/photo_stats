@@ -60,6 +60,7 @@ def main(exif, graph_path):
 
 if __name__ == '__main__':  # pragma: no cover
     test_directory = "/media/Photos/My Photos 2005 and on/2020/"
+    # test_directory = "/home/ermesa/Programming Projects/python/photo_stats/photostats/tests/test_images"
     test_graph_path = "/home/ermesa/tmp/photostats"
     test_photos = get_exif.get_photos(test_directory)
     test_exif = get_exif.get_exif(test_photos)
