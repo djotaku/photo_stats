@@ -36,13 +36,12 @@ def test_scan_test():
     photos = []
     for file in scan_tree:
         photos.append(file.path)
-    assert photos == file_paths
+    assert photos.sort() == file_paths.sort()
 
 
 def test_get_photos():
     photo_list = get_exif.get_photos(test_directory)
-    print(photo_list)
-    assert photo_list == file_paths
+    assert photo_list.sort() == file_paths.sort()
 
 
 def test_get_exif():
